@@ -37,28 +37,25 @@ function formatParams(params) {
 
 function displayResults(responseJson) {
     $(`#parkOutput`).children().remove();
-    if (responseJson.total === '0'){
+    if (responseJson.total === '0') {
         $(`#parkOutput`).append("<h1>No results. Please try again.</h1>")
-    }
-    else{
-    for (let i = 0; i < responseJson.data.length; i++) {
-        $(`#parkOutput`).append(`
-        <br>
-        <br>
-        <h1>${responseJson.data[i].fullName}</h1>
-        <br>
-        <span>${responseJson.data[i].description}</span>
-        <br>
-        <br>
-        <span>${responseJson.data[i].directionsInfo}</span>
-        <br>
-        <br>
-        <a href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a>
-        <br>
-        <br>
+    } else {
+        for (let i = 0; i < responseJson.data.length; i++) {
+            $(`#parkOutput`).append(`<br>
+        <ul class ="formaBorder">
+            <li class="spacetheBorder">
+                <h1>${responseJson.data[i].fullName}</h1>
+                <br>
+                <p>${responseJson.data[i].description}</p>
+                <br>
+                <p>${responseJson.data[i].directionsInfo}</p>
+                <br>
+                <a href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a>
+            </li>
+        </ul>
         `)
+        }
     }
-}
 }
 
 function submitQuery() {
