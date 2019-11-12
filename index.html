@@ -12,6 +12,21 @@
 
 <body>
 
+<h1>Visit a National Park for your next family Vacation</h1>
+<h3>Complete the form below too find a park near you.</h3>
+<section>
+<form>
+    <input type="text" id="searchInput" placeholder="Yellowstone">
+    <input type="text" id="stateInput" placeholder="WY">
+    <input type="number" id="resultInput" value="10" min="1" max="50">
+    <button type="submit" id="beginQuery">Search</button>
+</form>
+</section>
+
+<section>
+    <div id="parkOutput"></div>
+</section>
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
